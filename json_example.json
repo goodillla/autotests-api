@@ -1,0 +1,7 @@
+{
+  "name": "Игорь",
+  "age": 30,
+  "is_student": false,
+  "car": null,
+  "hobbies": ["ping-pong", "swimming"]
+}

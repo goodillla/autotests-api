@@ -1,16 +1,25 @@
-# This is a sample Python script.
+import json
+from pprint import pprint
 
-# Press Shift+F10 to execute it or replace it with your code.
-# Press Double Shift to search everywhere for classes, files, tool windows, actions, and settings.
+json_string = """{
+  "name": "Игорь",
+  "age": 30,
+  "is_student": false,
+  "car": null,
+  "hobbies": ["ping-pong", "swimming"]
+}"""
 
 
-def print_hi(name):
-    # Use a breakpoint in the code line below to debug your script.
-    print(f'Hi, {name}')  # Press Ctrl+F8 to toggle the breakpoint.
+json_from_string = json.loads(json_string)
+# pprint(json_from_string)
+json_to_string = json.dumps(json_from_string, indent=4, ensure_ascii=False)
+print(json_to_string)
 
+with open('json_example_2.json', 'w', encoding='utf-8') as file:
+    json.dump(json_from_string, file, indent=4, ensure_ascii=False)
 
-# Press the green button in the gutter to run the script.
-if __name__ == '__main__':
-    print_hi('PyCharm')
+with open('json_example.json', 'r', encoding='utf-8') as file:
+    json_from_file = json.load(file)
+    # print(json_from_file)
 
-# See PyCharm help at https://www.jetbrains.com/help/pycharm/
+# pprint(json_from_file)
